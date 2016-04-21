@@ -1,0 +1,23 @@
+$def with (feedJSON)
+
+$ items = feedJSON['items']
+
+<document>
+	<showcaseTemplate mode="showcase">
+		<banner>
+			<title>$feedJSON['title']</title>
+		</banner>
+		<carousel>
+			<section>
+				
+			$for i in range(len(items))
+				<lockup>
+					<img src="$items[i]["media"]["m"]"/>
+					<title>$items[i]["title"]</title>
+				</lockup>
+
+			</section>
+		</carousel>
+
+	</showcaseTemplate>
+</document>
